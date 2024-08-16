@@ -1,16 +1,28 @@
-/* src/components/ProfileEdit.css */
 .profile-edit {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 20px auto;
     width: 90%;
     max-width: 600px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.profile-edit:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .profile-edit form {
     margin-top: 20px;
     text-align: left;
+    animation: fadeIn 1s ease;
+}
+
+@media (max-width: 768px) {
+    .profile-edit {
+        width: 100%;
+        margin: 10px;
+    }
 }

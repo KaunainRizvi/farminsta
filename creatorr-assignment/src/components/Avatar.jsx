@@ -1,4 +1,3 @@
-// src/components/Avatar.jsx
 import React from 'react';
 import avatar from '../assets/avatar.jpg';
 import './Avatar.css';

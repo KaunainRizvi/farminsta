@@ -17,6 +17,15 @@ const SearchPage = ({ profiles, onSelectProfile }) => {
         });
     };
 
+    const handleClearFilters = () => {
+        setFilters({
+            language: '',
+            education: '',
+            specialization: '',
+            searchTerm: '',
+        });
+    };
+
     const filteredProfiles = profiles.filter(profile =>
         (filters.language === '' || profile.languages.toLowerCase().includes(filters.language.toLowerCase())) &&
         (filters.education === '' || profile.education.toLowerCase().includes(filters.education.toLowerCase())) &&
@@ -44,6 +53,7 @@ const SearchPage = ({ profiles, onSelectProfile }) => {
                     Search:
                     <input type="text" name="searchTerm" value={filters.searchTerm} onChange={handleChange} />
                 </label>
+                <button onClick={handleClearFilters}>Clear Filters</button>
             </div>
             <div className="profile-list">
                 {filteredProfiles.map(profile => (

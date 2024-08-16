@@ -1,28 +1,37 @@
-/* src/components/ProfileView.css */
 .profile-view {
     text-align: center;
     padding: 20px;
-    background-color: #fff;
+    background-color: #ffffff;
     margin: 20px auto;
     width: 90%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Reduced width for a more compact look */
+    border-radius: 15px; /* Increased border-radius for smoother corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Added a deeper shadow for more depth */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-view:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
 }
 
 .banner {
     width: 100%;
-    border-radius: 10px 10px 0 0;
+    height: 150px; /* Set height to maintain aspect ratio */
+    border-radius: 15px 15px 0 0; /* Match the card's top corners */
+    object-fit: cover; /* Ensures the image covers the banner area */
 }
 
 .profile-info h1 {
-    font-size: 28px;
-    margin: 10px 0;
+    font-size: 24px; /* Adjusted size for better hierarchy */
+    margin: 15px 0 5px;
+    color: #333333;
+    font-weight: 700; /* Increased weight for prominence */
 }
 
 .profile-info p {
-    font-size: 16px;
-    color: #737373;
+    font-size: 14px;
+    color: #666666;
+    margin: 5px 0;
 }
 
 .profile-details {
@@ -30,12 +39,70 @@
     margin-top: 20px;
 }
 
+.profile-details p {
+    margin: 10px 0;
+    color: #333333;
+}
+
+.profile-details strong {
+    color: #0095f6;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
 .social-links a {
     margin: 0 10px;
     text-decoration: none;
     color: #0095f6;
+    font-weight: 600; /* Increased font weight */
+    transition: color 0.3s ease-in-out;
 }
 
 .social-links a:hover {
+    color: #007bb5; /* Darker color on hover */
     text-decoration: underline;
 }
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.profile-actions button {
+    margin: 5px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0095f6;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.profile-actions button:hover {
+    background-color: #007bb5;
+}
+
+/* Centered message styling */
+.center-message {
+    font-family: 'Cursive', sans-serif; 
+    font-size: 40px;
+    text-align: center;
+    margin-top: 20%;
+    color: #555;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

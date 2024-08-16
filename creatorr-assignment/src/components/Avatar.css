@@ -1,7 +1,11 @@
-/* src/components/Avatar.css */
 .avatar {
     border-radius: 50%;
     border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
 }
 
 .avatar-large {

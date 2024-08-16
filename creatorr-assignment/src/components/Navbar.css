@@ -1,11 +1,18 @@
-/* src/components/Navbar.css */
 .navbar {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+    background-color: #f9f9f9;
 }
 
 .nav-logo {
@@ -19,8 +26,15 @@
     margin: 0 10px;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #0095f6;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
 }
