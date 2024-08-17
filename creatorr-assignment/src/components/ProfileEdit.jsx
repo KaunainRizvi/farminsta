@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Avatar from './Avatar';
 import './ProfileEdit.css';
 
-const ProfileEdit = ({ selectedProfile, onSave }) => {
+const ProfileEdit = ({ onSave }) => {
+    const location = useLocation();
+    const { profile: selectedProfile } = location.state || {};
     const [profile, setProfile] = useState(selectedProfile || {});
 
     useEffect(() => {

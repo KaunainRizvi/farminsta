@@ -37,3 +37,25 @@
         transform: translateY(0);
     }
 }
+
+.create-profile form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.create-profile form input[type="url"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.create-profile form input[type="file"] {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Avatar from './Avatar';
 import './CreateProfile.css';
@@ -11,6 +10,10 @@ const CreateProfile = ({ onSave }) => {
         languages: '',
         education: '',
         specialization: '',
+        avatar: null,
+        banner: null,
+        twitter: '',
+        instagram: '',
     });
 
     const handleChange = (e) => {
@@ -19,6 +22,20 @@ const CreateProfile = ({ onSave }) => {
             ...newProfile,
             [name]: value,
         });
+    };
+
+    const handleImageChange = (e) => {
+        const { name } = e.target;
+        const file = e.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = () => {
+            setNewProfile({
+                ...newProfile,
+                [name]: reader.result,
+            });
+        };
+        reader.readAsDataURL(file);
     };
 
     const handleSubmit = (e) => {
@@ -31,6 +48,10 @@ const CreateProfile = ({ onSave }) => {
             languages: '',
             education: '',
             specialization: '',
+            avatar: null,
+            banner: null,
+            twitter: '',
+            instagram: '',
         });
     };
 
@@ -62,6 +83,22 @@ const CreateProfile = ({ onSave }) => {
                 <label>
                     Specialization:
                     <input type="text" name="specialization" value={newProfile.specialization} onChange={handleChange} />
+                </label>
+                <label>
+                    Avatar:
+                    <input type="file" name="avatar" accept="image/*" onChange={handleImageChange} />
+                </label>
+                <label>
+                    Banner:
+                    <input type="file" name="banner" accept="image/*" onChange={handleImageChange} />
+                </label>
+                <label>
+                    Twitter:
+                    <input type="url" name="twitter" value={newProfile.twitter} onChange={handleChange} placeholder="https://twitter.com/yourprofile" />
+                </label>
+                <label>
+                    Instagram:
+                    <input type="url" name="instagram" value={newProfile.instagram} onChange={handleChange} placeholder="https://instagram.com/yourprofile" />
                 </label>
                 <button type="submit">Create</button>
             </form>
